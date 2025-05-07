@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons8-coffeeshop-67.png">
+    <title>Therapy Menu</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: auto;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif; color: rgb(250, 250, 250);
+            direction: rtl;
+            background-image: url(Fotolia_72367989_Subscription_XL.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            text-align: center;
+            background-image: url(download-removebg-preview.png);
+            backdrop-filter: inherit;
+            background-size: 5.5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            
+        }
+        header img {
+            width: 200px;
+            height: auto;
+            display: flex;
+            border: solid 0;
+            
+        }
+        .logo {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2.5rem;
+            margin: 10px 0;
+            border: solid 0;
+        }
+        nav {
+            overflow-x: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            white-space: nowrap;
+            background: #7f5539;
+            box-shadow: 0 2px 4px rgb(255, 255, 255);
+            display: flex;
+            gap: 10px;
+            padding: 5px;
+            -webkit-overflow-scrolling: touch;
+        }
+        nav::-webkit-scrollbar{
+            height: 4px;
+        }
+        nav::-webkit-scrollbar-thumb{
+            border-radius: 10px;
+        }
+        nav .menu-btn{
+            flex: 0 0 auto;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .menu-btn {
+            color: rgb(255, 255, 255);
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 17px;
+            white-space: nowrap;
+        }
+        .menu-btn:hover {
+            background-color: #656d4a;
+        }
+        .menu-section {
+            white-space: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: auto;
+
+            display: flex;
+            padding: 8px 0px;
+            background: #503b31;
+            border-top: 1px solid rgb(23, 167, 177);
+            border-bottom: 1px solid;
+        }
+        .menu-section li{
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .menu-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-section ul li {
+            padding: 20px 16px;
+            border-bottom: 1px solid #020202;
+        }
+
+        /* برای مرورگرهای مبتنی بر WebKit (کروم، سافاری، اج جدید) */
+        ::-webkit-scrollbar {
+              width: 4px;
+             height: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* برای فایرفاکس */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #888 #f1f1f1;
+        }
+
+        /* استایل کلی برای اسکرول بار نرم و روان */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* استایل اختیاری برای کل صفحه */
+        body {
+            overflow-y: scroll;
+            scrollbar-gutter: stable;
+        }
+        
+        .site-footer__social-links {
+            display: grid;
+            grid-auto-flow: column;
+            
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            font-size: 80%;
+            vertical-align: baseline;
+        }
+
+        .left-content{
+            display: grid;
+            justify-content: space-between;
+
+        }
+
+        .right-content{
+            display: flex;
+            padding: 20px;
+            justify-content: space-between;
+        }
+
+        .left-content, .right-content{
+            flex-shrink: 0;
+            font-size: 16px;
+            white-space: nowrap;
+            overflow-x: auto;
+            min-width: max-content;
+        }
+        @media screen and (max-width: 100px) {
+            .menu-section li{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .left-content{
+                margin-top: 5px;
+                font-weight: bold;
+                font-size: 16px;
+            }
+            .footer-content{
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        .footer{
+            padding: 10px 20px;
+            text-align: center;
+            width: 100%;
+            flex-direction: column;
+
+        }
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .footer-icon{
+            width: 24px;
+            height: 24px;
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <header>
+
+        
+
+        <div style="transform: translateX(-5%);">
+            <img src="Brown_Simple_Coffee_Shop_Logo_20250415_042137_0000-removebg-preview (4).png" alt="">
+            
+        </div>
+
+        <div class="header" style="transform: translateX(-5%); font-family:Arial, Helvetica, sans-serif;font-size: 18px;">
+            <p> فضایی آرام برای لحظات خوش☕</p>
+        </div>
+    </header>
+
+<main>
+
+    <nav>
+        <button class="menu-btn" data-target="coffee">  <b>بار گرم </b> </button>
+        <button class="menu-btn" data-target="cold">  <b>بار سرد </b> </button>
+        <button class="menu-btn" data-target="hot">  <b>نوشیدنی گرم </b> </button>
+        <button class="menu-btn" data-target="cold2">  <b>نوشیدنی سرد </b> </button>
+        <button class="menu-btn" data-target="herbal">  <b>چای و دمنوش </b> </button>
+        <button class="menu-btn" data-target="cake">  <b>کیک و دسر </b> </button>
+        <button class="menu-btn" data-target="breakfast">  <b>صبحانه و میان وعده </b> </button>
+    </nav>
+
+    <div class="menu-section" id="coffee">
+        <ul>
+            <li class="right-content"> اسپرسو تک 
+                <span class="left-content">55000 تومان</span>
+            </li>
+            <li class="right-content"> اسپرسو دبل 
+                <span class="left-content">70000 تومان</span>
+            </li>
+            <li class="right-content"> آمریکانو 
+                <span class="left-content">70000 تومان</span>
+            </li>
+            <li class="right-content"> لاته 
+                <span class="left-content">85000 تومان</span>
+            </li>
+            <li class="right-content"> موکا 
+                <span class="left-content">85000 تومان</span>
+            </li>
+            <li class="right-content"> کاپوچینو 
+                <span class="left-content">85000 تومان</span>
+            </li>
+            <li class="right-content"> شیرنسکافه 
+                <span class="left-content">85000 تومان</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu-section" id="cold">
+        <ul>
+            <li class="right-content"> آیس آمریکانو 
+                <span class="left-content">75000 تومان</span>
+            </li>
+            <li class="right-content"> آیس کافی 
+                <span class="left-content">85000 تومان</span>
+            </li>
+            <li class="right-content"> آفوگاتو 
+                <span class="left-content">95000 تومان</span>
+            </li>
+            <li class="right-content"> کوک اسپرسو 
+                <span class="left-content">85000 تومان</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu-section" id="hot">
+        <ul>
+            <li class="right-content"> شیرکاکائو 
+                <span class="left-content">75000 تومان</span>
+            </li>
+            <li class="right-content"> شیرشکلات 
+                <span class="left-content">85000 تومان</span>
+            </li>
+            <li class="right-content"> هات چاکلت 
+                <span class="left-content">85000 تومان</span>
+            </li>
+            <li class="right-content"> چای ماسالا 
+                <span class="left-content">80000 تومان</span>
+            </li>
+            <li class="right-content"> سرویس چای تک نفره 
+                <span class="left-content">80000 تومان</span>
+            </li>
+            <li class="right-content"> سرویس چای دونفره 
+                <span class="left-content">130000 تومان</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu-section" id="cold2">
+        <ul>
+            <li class="right-content"> کوکاکولا 
+                <span class="left-content">30000 تومان</span>
+            </li>
+            <li class="right-content"> ماءالشعیر 
+                <span class="left-content">30000 تومان</span>
+            </li>
+            <li class="right-content"> آب 
+                <span class="left-content">10000 تومان</span>
+            </li>
+            <li class="right-content"> لیموناد 
+                <span class="left-content">30000 تومان</span>
+            </li>
+            <li class="right-content"> دوغ 
+                <span class="left-content">20000 تومان</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu-section" id="herbal">
+        <ul>
+            <li class="right-content"> چای سیاه 
+                <span class="left-content">35000 تومان</span>
+            </li>
+            <li class="right-content"> چای افغان 
+                <span class="left-content">40000 تومان</span>
+            </li>
+            <li class="right-content"> چای سبز 
+                <span class="left-content">85000 تومان</span>
+            </li>
+            <li class="right-content"> دمنوش پونه 
+                <span class="left-content">80000 تومان</span>
+            </li>
+            <li class="right-content"> دمنوش آویشن 
+                <span class="left-content">85000 تومان</span>
+            </li>
+            <li class="right-content"> دمنوش ترش 
+                <span class="left-content">85000 تومان</span>
+            </li>
+            <li class="right-content"> دمنوش گل گاو زبان 
+                <span class="left-content">90000 تومان</span>
+            </li>
+            <li class="right-content"> دمنوش گل ختمی 
+                <span class="left-content">90000 تومان</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu-section" id="cake">
+        <ul>
+            <li class="right-content"> کیک 
+                <span class="left-content">20000 تومان</span>
+            </li>
+            <li class="right-content"> کلوچه فومن 
+                <span class="left-content">20000 تومان</span>
+            </li>
+            <li class="right-content"> کلوچه 
+                <span class="left-content">20000 تومان</span>
+            </li>
+            <li class="right-content"> باقلوا 
+                <span class="left-content">15000 تومان</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu-section" id="breakfast">
+        <ul>
+            <li class="right-content"> نیمرو مخصوص 
+                <span class="left-content">80000 تومان</span>
+            </li>
+            <li class="right-content"> سوسیس تخم مرغ 
+                <span class="left-content">100000 تومان</span>
+            </li>
+            <li class="right-content"> املت مخصوص 
+                <span class="left-content">90000 تومان</span>
+            </li>
+            <li class="right-content"> یرالما یومورتا 
+                <span class="left-content">60000 تومان</span>
+            </li>
+            <li class="right-content"> چیغیرتما  
+                <span class="left-content">120000 تومان</span>
+            </li>
+        </ul>
+    </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="fotter-content">
+
+            <a href="https://instagram.com/_coffee_therapy" target="_blank">
+                <img src="social.png" alt="##" class="footer-icon">
+            </a>
+            <a href="https://t.me/M4804H" target="_blank">
+                <img src="telegram.png" alt="##" class="footer-icon">
+            </a>
+
+            <p class="footer-left" style="direction:ltr;"> Design by Mohammadreza Rahimi </p>
+
+            <p class="footer-center"> © 2025 </p>
+        <div>
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".menu-btn");
+  const sections = document.querySelectorAll(".menu-section");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", function () {
+      const targetId = this.getAttribute("data-target");
+
+      // بستن همه‌ی سکشن‌ها
+      sections.forEach(section => {
+        if (section.id === targetId) {
+          // اگر همونه، نمایش بده
+          section.style.display = "block";
+        } else {
+          // بقیه رو مخفی کن
+          section.style.display = "none";
+        }
+      });
+    });
+  });
+
+  // اختیاری: نمایش پیش‌فرض فقط اولین بخش
+  sections.forEach((section, index) => {
+    section.style.display = index === 0 ? "none" : "none";
+  });
+});
+    </script>
+    
+
+</body>
+</html>
